@@ -1,0 +1,249 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+.chat_base img{
+  display: block;
+  width: 100%;
+}
+.eva{
+  padding: 5px 10px;
+  border:1px solid rgb(73, 229, 250);
+  font-size: 12px;
+}
+.chat_base{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  cursor: pointer;
+  background: #fbfdff;
+}
+.chatwrap{
+  position: fixed;
+  width:400px;
+  max-height: calc(100vh - 20vh);
+  right:10px;
+  bottom:5px;
+  border:1px solid #192a44;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.chat-header{
+  padding: 10px 20px;
+  background: #192a44;
+  color:#fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid transparent;
+}
+.chat-main-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chat-body{
+  padding: 10px 20px;
+  position: relative;
+  height: calc(100% - 90px);
+  overflow-y: scroll;
+}
+.chat-footer{
+  position: fixed;
+  right: 11px;
+  bottom: 10px;
+  width: 381px;
+  border-top: 1px solid #ddd;
+  padding: 10px 10px 5px;
+}
+.chat-header h3{
+  font-size:20px;
+  line-height: 30px;
+  font-weight: 400;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  letter-spacing: .3px;
+}
+.chat-header h4{
+  font-size:18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+.chat-header p{
+  font-size:16px;
+  line-height: 26px;
+  font-weight: 300;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+.fs-4{
+  font-size:20px;
+  padding: 0px 10px;
+  color: #fff;
+  font-weight: 900;
+}
+.height{
+  height: 100%;
+}
+.mx-height{
+ height: 50vh;
+}
+.form-text{
+  padding: 10px 15px;
+  border: 0px solid #044ea0;
+  max-width: 390px;
+  width: 80%;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 26px;
+  color:#000;
+  font-weight: 400;
+  z-index: 1;
+  position: relative;
+  background: #ecf4fc;
+}
+.form-text:focus{
+  border: 0px solid #044ea0;
+  outline: 0px solid #000 !important;
+}
+.send-message{
+  position: absolute;
+  right: 12px;
+  top: 15px;
+  padding: 10px;
+  z-index: 2;
+  background: #ff6c1a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   transition: .5s all ease-in;
+}
+.send-message:hover, .send-message:focus{
+  background: #192a44;
+  transition: .5s all ease-in;
+}
+.send-chat-msg, .recieved-chat-msg {
+  background: #e4e4e4;
+  padding:10px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  margin-bottom: 10px;
+  width: 80%;
+}
+.send-chat-msg{
+  margin-left: auto;
+}
+.recieved-chat-msg{
+  margin-right: auto;
+  background: #e4effa;
+  margin-bottom: 10px;
+}
+.recieved-chat-msg{
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 15px;
+}
+.send-chat-msg p, .recieved-chat-msg p, .sent-time ,.received-time{
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 20px;
+  padding: 0;
+  margin: 0;
+}
+.sent-time{
+  text-align: right;
+}
+.received-time{
+  text-align: left;
+}
+.send-wrap, .receive-wrap{
+  margin-bottom: 15px;
+}
+@media(max-width:575px){
+  .chatwrap {
+      width: 94%;
+  }
+  .chat-footer {
+      width: 87%;
+  }
+  .chat-header h3,.chat-header h4 {
+      font-size: 16px;
+      line-height: 26px;
+  }
+  .chat-header p {
+      font-size: 14px;
+      line-height: 22px;
+  }
+}
+
+
+
+.hhh{height: 50vh;}
+.responseloader{
+    display: flex;
+    justify-content: center
+}
+.displaynone{
+    display: none;
+}
+.dots {
+  position:relative;
+  width:100%;
+  height:50px;
+  transform:scale(.25,.25);
+}
+.dot{
+  width:15px;
+  height:15px;
+  position:absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  opacity: 0;
+  border-radius: 50%;
+  background-color: #0082C3
+}
+.dot-1{
+    animation: animation-dots 1.5s infinite linear 1s
+}
+.dot-2{
+    animation: animation-dots 1.5s infinite linear 0.5s;
+}
+.dot-3{
+  animation: animation-dots 1.5s infinite linear
+}
+@keyframes animation-dots {
+  0% {
+    left: -150px;
+    opacity: 0
+  }
+  20% {
+    left: 0px;
+    opacity: 1
+  }
+  80% {
+    left: 100px;
+    opacity: 1
+  }
+  100% {
+    opacity: 0;
+    left: 200px
+  }
+}
+
+.ava-img {
+  background-image: url(../assets/image/chat.png);
+}
+
+.typing-img {
+  background-image: url(../assets/image/typing-loading.gif);
+}

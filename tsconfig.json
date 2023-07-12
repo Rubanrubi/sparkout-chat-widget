@@ -17,6 +17,11 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
+    "paths": {
+      "sparkout-chat-widget": [
+        "dist/sparkout-chat-widget"
+      ]
+    },
     "module": "ES2022",
     "useDefineForClassFields": false,
     "lib": [

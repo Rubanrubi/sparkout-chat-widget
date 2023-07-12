@@ -93,6 +93,42 @@
           }
         }
       }
+    },
+    "sparkout-chat-widget": {
+      "projectType": "library",
+      "root": "projects/sparkout-chat-widget",
+      "sourceRoot": "projects/sparkout-chat-widget/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/sparkout-chat-widget/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sparkout-chat-widget/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/sparkout-chat-widget/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/sparkout-chat-widget/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": "06fc2c56-1e8c-409d-9c9d-43647ede9313"
   }
 }

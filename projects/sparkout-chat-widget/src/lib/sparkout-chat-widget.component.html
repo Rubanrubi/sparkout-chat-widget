@@ -1,0 +1,48 @@
+<div class="chat_base" *ngIf="!showMessagePanel" (click)="openMessagePanel()">
+  <a class="ava-img"></a>
+  <a class="eva">ASK EVA</a>
+</div>
+
+
+<div class="chatwrap" *ngIf="showMessagePanel">
+  <div class="chat-header">
+     <div class="chat-main-head gap-4">
+          <div>
+              <h3>Ask EVA</h3>
+          </div>
+          <div class="d-flex align-items-center justify-content-center gap-4">
+              <a (click)="toggleMinMax=!toggleMinMax" ><i class="bi bi-arrow-down-left fs-4" *ngIf="!toggleMinMax"></i><i class="bi bi-arrow-up-right fs-4" *ngIf="toggleMinMax"></i></a>
+              <a (click)="openMessagePanel()"><i class="bi bi-x-lg fs-4"></i></a>
+          </div>
+     </div>
+      <h4>Hi !</h4>
+      <p>I am EVA, your personal assistant to help you with website related queries</p>
+  </div>
+  <!-- <p>{{apiresonsemessage}}</p> -->
+  <div *ngIf="!toggleMinMax" [ngClass]="toggleMinMax ? 'height' :'mx-height'"  #scrollMe [scrollTop]="scrollMe.scrollHeight">
+      <div class="chat-body" >
+          <div class="send-wrap" *ngFor="let show of messages; let i=index;">
+              <div class="send-chat-msg" >
+                  <p>{{show}}</p>
+              </div>
+
+              <div class="recive-wrap">
+                  <div *ngIf="!apiresonsemessage[i]" class="typing-loading">
+                      <!-- <img class="typing-loading" src="../assets/image/typing-loading.gif"> -->
+                  </div>
+                  <p class="recieved-chat-msg" *ngIf="apiresonsemessage[i]">{{apiresonsemessage[i]}}</p>
+
+              </div>
+              <!-- <p class="sent-time">11.05 pm</p> -->
+          </div>
+
+
+          <div class="chat-footer">
+              <form [formGroup]="chatForm" (ngSubmit)="messageSend()">
+                  <input  type="text" class="form-text" formControlName="message" placeholder="Enter your message" required >
+                  <button type="submit" class="send-message" [disabled]="chatForm.invalid"><i class="bi bi-send"></i></button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
